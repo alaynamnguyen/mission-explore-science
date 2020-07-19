@@ -1,0 +1,55 @@
+/* FAQ page */
+#third-image1 {
+    height: 350px; 
+    width: 500px;
+    float: right; 
+    margin-top: 40px;
+    margin-bottom: 0;
+    margin-right: 50px;
+}
+
+/*Accordion*/
+.accordion-button{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #76A9C4;
+    color: #ffffff;
+    text-align: left;
+    transition: background 0.2s;
+}
+.accordion-button::after{
+    content: '\25be'; /*translate to triangle character*/
+    float: right;
+    transform: scale(1.5);
+}
+.accordion-button--active{
+    background: #8fbad1;
+}
+.accordion-button--active::after{
+    content: '\25b4'; /*change character to upright*/
+}
+.accordion-content{
+    overflow: hidden;
+    max-height: 0;
+    /*hides content and can animate height when acc expanded*/
+    transition: max-height 0.2s;
+    padding: 0 15px;
+    background: #eeeeee;
+}
+
+/*Avatars*/
+.avatar{
+    vertical-align: middle;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+.header-text{
+    text-align: center;
+    color: #6E4548;
+    font-size: 20px;
+}

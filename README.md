@@ -1,1 +1,2 @@
-# mission-explore-science
+# Mission-Xplore-Science
+Website for Mission: Xplore Science

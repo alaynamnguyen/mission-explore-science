@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mission: Xplore Science</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/logos/medium-rocket.png" type="image/png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="projects.css">
+    <link rel="stylesheet" type="text/css" href="checkboxes.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <!-- !PAGE CONTENT! -->
+
+    <!-- Menu -->
+    <div include-html="elements-on-every-page/menu.html"></div>
+    <script>
+        includeHTML();
+    </script>
+
+    <h1 id="title">OCEANOGRAPHY</h1>
+
+    <div class="section">
+        <ul class="grid" id="myGrid">
+        </ul>
+    </div>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h4 id="modal-title" class="text-center"></h4>
+                <img id="modal-image" src="#">
+                <div class="modal-body">
+                    <div class="tabb">
+                        <button class="tablinks active" onclick="openTab(event, 'Overview')">Overview</button>
+                        <button class="tablinks" onclick="openTab(event, 'Instructions')">Instructions</button>
+                        <button class="tablinks" onclick="openTab(event, 'LearnMore')">Learn More</button>
+                    </div>
+
+                    <div id="Overview" class="tabbcontent" style="display: block;">
+                        <br>
+                        <p id="modal-bolded">Summary: </p>
+                        <p id="modal-summary" class="text-center"></p><br><br>
+                        <p id="modal-bolded" style="color: black; font-weight: 100;">This project is recommended for
+                        </p>
+                        <p id="modal-people" class="text-center"></p><br><br>
+                        <p id="modal-bolded">Difficulty: </p>
+                        <p id="modal-difficulty" class="text-center"></p><br><br>
+                        <p id="modal-bolded">Skills Gained: </p><br>
+                        <p id="modal-skills" class="text-center"></p>
+                        <a id="modal-link" href="#" target="_blank"><button id="modal-button" class="text-center">Go to
+                                Website</button></a>
+                    </div>
+
+                    <div id="Instructions" class="tabbcontent">
+                        <br>
+                        <p id="modal-bolded">Instructions: </p><br>
+                        <p id="modal-instructions" class="text-center"></p><br><br>
+                    </div>
+
+                    <div id="LearnMore" class="tabbcontent">
+                        <br>
+                        <p id="modal-bolded">Fun Extension for Project: </p><br>
+                        <p id="modal-extension" class="text-center"></p><br>
+                        <br>
+                        <p id="modal-bolded">Learn More About </p>
+                        <p id="modal-topic" class="modal-bolded"></p><br>
+                        <p id="modal-video-description" class="text-center">Light pollution</p><br>
+                        <iframe id="modal-video" width="560" height="315" src="#" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <br>
+                        <p id="modal-video2-description" class="text-center">Light pollution</p><br>
+                        <iframe id="modal-video2" width="560" height="315" src="#" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                        <br></bar><br>
+                        <p id="modal-bolded">Another Helpful Resource to Learn More:</p>
+                        <br>
+                        <p class="text-center"><a id="modal-another-resource" href="#" target="_blank"></a></p><br>
+                    </div>
+
+                    <script>
+                        function openTab(evt, cityName) { // switches tab
+                            var i, tabbcontent, tablinks;
+                            tabbcontent = document.getElementsByClassName("tabbcontent");
+                            for (i = 0; i < tabbcontent.length; i++) {
+                                tabbcontent[i].style.display = "none";
+                            }
+                            tablinks = document.getElementsByClassName("tablinks");
+                            for (i = 0; i < tablinks.length; i++) {
+                                tablinks[i].className = tablinks[i].className.replace(" active", "");
+                            }
+                            document.getElementById(cityName).style.display = "block";
+                            evt.currentTarget.className += " active";
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var url = "projects.json";
+
+        // gets data from json file and passes it to the startBuild method
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+                startBuild(myArr);
+            }
+        };
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+
+        // this calls the buildGrid function, DO NOT DELETE; KEEP AS AN INTERMEDIARY
+        function startBuild(arr) {
+            buildGrid(arr);
+        }
+
+        function buildGrid(data) {
+            var grid = document.getElementById('myGrid');
+            for (var i = 0; i < data.length; i++) {
+                var listItem = makeGrid(data, i);
+                if (listItem) { // if makeGrid doesn't return false
+                    grid.appendChild(listItem);
+                }
+            }
+        }
+
+        function makeGrid(data, i) {
+            if (data[i].tag == "oceanography") {
+                let listItem = document.createElement('li');
+                let div = document.createElement('div');
+                div.className = "box";
+                div.style = "background-image: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), url(" + data[i].image + ");";
+                let a = document.createElement('a');
+                // event listener
+                var title = data[i].title;
+                a.addEventListener("click", function (e) {
+                    createModal(data, i);
+                })
+                let div2 = document.createElement('div');
+                div2.className = "info";
+                let h3 = document.createElement('h3');
+                h3.innerHTML = data[i].title;
+
+                let p = document.createElement('p');
+                p.innerHTML = data[i].summary;
+                div2.append(h3);
+                div2.append(p);
+                a.append(div2);
+                div.append(a);
+                listItem.appendChild(div);
+                return listItem;
+            } else {
+                return false;
+            }
+        }
+
+        function createModal(data, i) {
+            var modal = document.getElementById("projectModal");
+            var span = document.getElementsByClassName("close")[0];
+
+            modal.style.display = "block";
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+            // overview
+            document.getElementById("modal-title").innerHTML = data[i].title;
+            document.getElementById("modal-summary").innerHTML = data[i].summary;
+            document.getElementById("modal-image").src = data[i].image;
+            document.getElementById("modal-people").innerHTML = data[i].people + ".";
+            document.getElementById("modal-difficulty").innerHTML = data[i].difficulty;
+            document.getElementById("modal-skills").innerHTML = data[i].skills;
+            document.getElementById("modal-link").href = data[i].link;
+            // instructions
+            document.getElementById("modal-instructions").innerHTML = data[i].instructions;
+            // learn more
+            document.getElementById("modal-extension").innerHTML = data[i].extension;
+            document.getElementById("modal-topic").innerHTML = data[i].topic + ":";
+            document.getElementById("modal-video-description").innerHTML = data[i].videodes + ":";
+            document.getElementById("modal-video").src = data[i].video;
+            document.getElementById("modal-video2-description").innerHTML = data[i].video2des + ":";
+            document.getElementById("modal-video2").src = data[i].video2;
+            document.getElementById("modal-another-resource").innerHTML = data[i].anotherresource;
+            document.getElementById("modal-another-resource").href = data[i].anotherresource;
+        }
+    </script>
+
+    <!-- End Page Content -->
+
+    <!-- Footer -->
+    <div include-html="elements-on-every-page/footer.html"></div>
+    <script>
+        includeHTML();
+    </script>
+
+</body>
+
+</html>

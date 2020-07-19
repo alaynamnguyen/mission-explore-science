@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mission: Xplore Science</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/logos/medium-rocket.png" type="image/png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="projects.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <!-- !PAGE CONTENT! -->
+
+    <!-- Menu -->
+    <div include-html="elements-on-every-page/menu.html"></div>
+    <script>
+        includeHTML();
+    </script>
+
+    <h1 id="title">PROJECTS</h1>
+
+    <!--
+  <div class="topnav">
+    <div class="search-container">
+      <form action="/action_page.php">
+         <input type="text" placeholder="Search.." name="search">
+         <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+  -->
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .mySlides {
+            display: none;
+        }
+    </style>
+
+    <div class="w3-content">
+        <div class="mySlides w3-container w3-red">
+            <h1><b>Did You Know?</b></h1>
+            <h1><i>Chimpanzees are gr8!</i></h1>
+        </div>
+
+        <img class="mySlides" src="assets/Slideshow/sampleslide.png" style="width:100%">
+
+        <img class="mySlides" src="assets/astronomy/galaxy.png" style="width:100%">
+
+
+        <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+            <p><span class="w3-tag w3-yellow">New!</span>
+                <p>Free science activities!</p>
+                <p>Only $99 !!!</p>
+        </div>
+
+        <img class="mySlides" src="assets/astronomy/lostatnight.jpg" style="width:100%">
+    </div>
+
+    <script>
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            x[slideIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+    </script>
+
+    <!-- End Page Content -->
+
+    <!-- Footer -->
+    <div include-html="elements-on-every-page/footer.html"></div>
+    <script>
+        includeHTML();
+    </script>
+
+</body>
+
+</html>

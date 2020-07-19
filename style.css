@@ -1,0 +1,289 @@
+/* HOMEPAGE */
+
+body {
+    background-color: white;
+    font-family: "Muli", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    margin: 0;
+}
+
+h1 {
+    font-family: "Muli", sans-serif;
+}
+
+
+#home {
+    display: flex;
+    clear: both;
+}
+
+#home-body {
+    float: left;
+    height: auto;
+}
+
+#home-title {
+    font-family: "Muli", sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #76A9C4;
+    width: 600px;
+    margin: 0 10%;
+    padding-top: 7%;
+    line-height: 1.3;
+}
+
+#title { /* header for each page */
+    font-family: "Muli", sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: #76A9C4;
+    width: 100%;
+    float: left;
+    padding-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    margin: 0 80px;
+}
+
+#home-paragraph {
+    width: 500px;
+    font-family: "Muli", sans-serif;
+    font-size: 20px;
+    margin: 20px 10%;
+    line-height: 1.6;
+}
+
+#home-special {
+    font-weight: bold;
+    color: #76A9C4;
+}
+
+#buttons {
+    width: 30%;
+    margin: 30px 10%;
+    height: 120px;
+}
+
+#home-button {
+    background-color: #76A9C4;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+}
+
+#home-link {
+    text-decoration: none;
+}
+
+#home-image {
+    width: 560px;
+    height: auto;
+    float: right;
+    margin-top: 10px;
+    margin-right: 100px;
+    z-index: -1;
+}
+
+#second-image {
+    height: 350px; 
+    margin-top: 30px;
+    width: auto; 
+    float: left; 
+    margin-left: 10%; 
+    display: flex;
+    clear: both;
+}
+
+#third-image {
+    height: 350px; 
+    width: auto; 
+    float: right; 
+    margin-top: 30px;
+    margin-bottom: 0;
+    margin-right: 100px;
+}
+
+.w3-content {
+    height: 400px;
+    width: 900px;
+    overflow: hidden;
+}
+
+
+/* MENU */
+
+.navbar {
+    margin: 0 auto;
+}
+
+.logo img {
+    /* Logo */
+    float: left;
+    height: 40px;
+    width: auto;
+    margin: 15px 20px;
+}
+
+nav {
+    background: white;
+    height: 60px;
+    top: 0;
+}
+
+nav ul {
+    /* First unlisted list (5 tabs) */
+    margin: 0;
+    padding: 0;
+    float: right;
+}
+
+nav ul li {
+    /* 5 tabs */
+    background: white;
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    z-index: 1;
+}
+
+nav ul li a {
+    /* Links for 5 tabs */
+    color: #6E4548;
+    text-decoration: none;
+    font-family: "Muli", sans-serif;
+    display: block;
+    padding: 15px 15px;
+    margin-right: 100px;
+    margin-top: 0px;
+    font-size: 18px;
+}
+
+nav ul li a:hover,
+a.active {
+    /* Hover and clicks for 5 tabs */
+    color: #76A9C4;
+}
+
+nav ul li a.active::before {
+    /* top of tab wen clicked */
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #76A9C4;
+    position: absolute;
+    top: 0;
+    width: 70%;
+}
+
+nav ul li a::before {
+    /* tabs by default, no blocks */
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #76A9C4;
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+nav ul li a:hover::before {
+    /* tab transition */
+    width: 70%;
+}
+
+nav ul ul {
+    /* Second unlisted list (subtabs) */
+    position: absolute;
+    top: 45px;
+    line-height: 20px !important;
+    display: none;
+}
+
+nav ul li:hover>ul {
+    /* when tabs are hovered, shows subtabs */
+    display: block;
+}
+
+nav ul ul li {
+    /* subtabs */
+    width: 150px;
+    float: none;
+    display: list-item;
+    position: relative;
+    line-height: 20px !important;
+}
+
+nav ul ul li a::before {
+    /* shows nothing above links */
+    display: none;
+}
+
+
+/* MODIFIED MENU WHEN SCREEN IS THINNER */
+
+
+/*Projects search bar*/
+
+.topnav .search-container {
+    color: #6E4548;
+    text-decoration: none;
+    font-family: "Muli", sans-serif;
+    display: block;
+    padding: 50px 50px;
+    margin-left: 453px;
+    font-size: 25px;
+}
+
+.topnav input[type=text] {
+    padding: 6px;
+    color: #6E4548;
+    font-size: 25px;
+    border: none;
+    margin: 0 auto;
+}
+
+.topnav .search-container button {
+    float: right;
+    padding: 6px 10px;
+    margin: 0 auto;
+    margin-right: 453px;
+    background: #6E4548;
+    ;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+    background: #ccc;
+}
+
+@media screen and (max-width: 1200px) {
+    .topnav .search-container {
+        float: none;
+    }
+    .topnav a,
+    .topnav input[type=text],
+    .topnav .search-container button {
+        float: middle;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}

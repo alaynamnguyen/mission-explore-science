@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mission: Xplore Science</title>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/logos/medium-rocket.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="projects.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+
+<!-- !PAGE CONTENT! -->
+<header>
+    <!-- Menu -->
+    <div include-html="elements-on-every-page/menu.html"></div>
+    <script>
+        includeHTML();
+    </script>
+</header>
+
+<body>
+    <!-- <div class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="assets/logos/logo-no-words.png"></a>
+    </div>
+    <nav>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div id="myTabs">
+        <ul class="nav-links">
+          <li><a class="tab active" href="index.html">Home</a>
+            <li><a class="tab" href="projects.html">Projects</a>
+              <ul>
+                <li><a href="astronomy.html">Astronomy</a></li>
+                <li><a href="biology.html">Biology</a></li>
+                <li><a href="earth-science.html">Earth Science</a></li>
+                <li><a href="nature.html">Nature</a></li>
+                <li><a href="oceanography.html">Oceanography</a></li>
+                <li><a href="physics.html">Physics</a></li>
+              </ul>
+            </li>
+            <li><a class="tab" href="about-us.html">About Us</a>
+              <ul>
+                <li><a href="our-team.html">Our Team</a></li>
+              </ul>
+            </li>
+            <li><a class="tab" href="what-we-do.html">What We Do</a></li>
+            <li><a class="tab" href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector("ul");
+      const links = document.querySelectorAll("ul li");
+  
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle("open");
+      });
+    </script>-->
+
+    <div class="body">
+        <img id="home-image" src="assets/homepage/spacespace.gif">
+        <div class="home">
+            <div class="home-body"></div>
+            <h1 id="home-title">MISSION: <br>XPLORE SCIENCE</h1>
+            <p id="home-paragraph" class="text-center">We are a
+                <span id="home-special">student-run</span> nonprofit organization that aims to educate, motivate, and
+                inspire the next generation of
+                <span id="home-special">complex thinkers</span> by introducing students to
+                <span id="home-special">citizen science</span> initiatives in the classroom.</p>
+            <div id="buttons">
+                <a id="home-link" href="projects.html" style="float: left;"><button id="home-button"
+                        class="text-center">Students</button></a>
+                <a id="home-link" href="about-us.html" style="float: right; margin-right: 20px;"><button
+                        id="home-button" class="text-center">Teachers</button></a>
+            </div>
+        </div>
+        <div style="background-color: #76A9C4; margin-top: 0; height: 420px;">
+            <img id="second-image" src="assets/homepage/jumble.gif">
+            <div class="home-body" style="float: right; width: 50%; float: right; margin-top: 30px;">
+                <h1 id="home-title" class="text-center" style="color: white; width: 100%;">OUR WEBSITE</h1>
+                <p id="home-paragraph" class="text-center" style="color: white; width: 500px;">Our user-friendly platform
+                    <span id="home-special" style="color: #6E4548;">empowers</span> kids to discover different
+                    scientific branches including astronomy, biology, and technology, all while
+                    <span id="home-special" style="color: #6E4548;">progressing research projects</span> around
+                    the
+                    world.</p>
+            </div>
+        </div>
+        <img id="third-image" src="assets/homepage/statjumble2.png">
+        <div class="home">
+            <div class="home-body" style="height: 420px;">
+                <h1 id="home-title" class="text-center">DOING RESEARCH</h1>
+                <p id="home-paragraph" class="text-center" style="width: 500px;">Students engage in fun and interactive
+                    <span id="home-special">data collection and analysis</span> by following our comprehensive guides,
+                    becoming a valuable part of the
+                    <span id="home-special">global scientific community</span>.
+                </p>
+            </div>
+        </div>
+        <div style="background-color: #6E4548; margin-top: 0; height: 800px;">
+            <div class="projects">
+                <h1 id="home-title" class="text-center" style="color: white; width: 100%;">EXPLORE OUR PROJECTS</h1>
+                <div class="section" style="padding: 0;">
+                    <ul class="grid" id="homeGrid" style="margin-bottom: 0;">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+   
+
+    <script>
+        var arr = [{
+            "title": "Astronomy",
+            "summary": "Explore space!",
+            "image": "../assets/homepage/space.jpg",
+            "link": "astronomy.html"
+        }, {
+            "title": "Biology",
+            "summary": "What is life?",
+            "image": "../assets/homepage/bio.jpg",
+            "link": "biology.html"
+        }, {
+            "title": "Earth Science",
+            "summary": "Rock on!",
+            "image": "../assets/homepage/earthscience.jpg",
+            "link": "earth-science.html"
+        }, {
+            "title": "Nature",
+            "summary": "Learn about animals and plants!",
+            "image": "../assets/homepage/bird.jpg",
+            "link": "nature.html"
+        }, {
+            "title": "Oceanography",
+            "summary": "Swim with the fish! (and kelp)",
+            "image": "../assets/homepage/fish.jpg",
+            "link": "oceanography.html"
+        }, {
+            "title": "Physics",
+            "summary": "The study of motion!",
+            "image": "../assets/homepage/physics.jpg",
+            "link": "physics.html"
+        }];
+        buildGrid(arr);
+
+        function buildGrid(data) {
+            var grid = document.getElementById('homeGrid');
+            for (var i = 0; i < data.length; i++) {
+                var listItem = makeGrid(data, i);
+                grid.appendChild(listItem);
+            }
+        }
+
+        function makeGrid(data, i) {
+            let listItem = document.createElement('li');
+            listItem.style = "height: 220px"; // changed height of box
+            let div = document.createElement('div');
+            div.className = "box";
+            div.style = "background-image: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), url(" + data[i].image + ");";
+            let a = document.createElement('a');
+            // event listener
+            var title = data[i].title;
+            a.href = data[i].link;
+            let div2 = document.createElement('div');
+            div2.className = "info";
+            let h3 = document.createElement('h3');
+            h3.innerHTML = data[i].title;
+            h3.style = "font-size: 70px; padding: 30px 0 0 0;"; // changed font size 70
+
+            let p = document.createElement('p');
+            p.innerHTML = data[i].summary;
+            p.style = "font-size: 20px;"; // changed font size 20
+            div2.append(h3);
+            div2.append(p);
+            a.append(div2);
+            div.append(a);
+            listItem.appendChild(div);
+            return listItem;
+
+        }
+    </script>
+    <!-- Projects Section
+    <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Astronomy: Explore Space!</div>
+                <a href="astronomy.html"> <img src="assets/homepage/space.jpg" alt="House" style="width:100%"> </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Biology: What is life?</div>
+                <a href="biology.html">
+                    <img src="assets/homepage/bio.jpg" alt="House" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Earth Science: Rock on!</div>
+                <a href="earth-science.html">
+                    <img src="assets/homepage/earthscience.jpg" alt="House" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Nature: Learn about animals and plants!</div>
+                <a href="nature.html">
+                    <img src="assets/homepage/bird.jpg" alt="House" style="width:100%">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Oceanography: Swim with the fish! (and kelp)</div>
+                <a href="oceanography.html">
+                    <img src="assets/homepage/fish.jpg" alt="House" style="width:99%">
+                </a>
+            </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+                <div class="w3-display-topleft w3-black w3-padding">Physics: Study of motion! </div>
+                <a href="physics.html">
+                    <img src="assets/homepage/physics.jpg" alt="House" style="width:99%">
+                </a>
+            </div>
+        </div>
+    </div> -->
+    </div>
+    </div>
+    </div>
+</body>
+
+<!-- End Page Content -->
+<!-- Footer -->
+<footer>
+    <div include-html="elements-on-every-page/footer.html"></div>
+    <script>
+        includeHTML();
+    </script>
+</footer>
+
+</html>
