@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="assets/logos/medium-rocket.png" type="image/png">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="projects.css">
@@ -25,6 +26,84 @@
 
     <h1 id="title">PROJECTS</h1>
 
+    <div class="projects">
+        <h1 id="home-title" class="text-center" style="color: white; width: 100%;">EXPLORE OUR PROJECTS</h1>
+        <div class="section" style="padding: 0;">
+            <ul class="grid" id="homeGrid" style="margin-bottom: 0;">
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var arr = [{
+            "title": "Astronomy",
+            "summary": "Explore space!",
+            "image": "../assets/homepage/space.jpg",
+            "link": "astronomy.html"
+        }, {
+            "title": "Biology",
+            "summary": "What is life?",
+            "image": "../assets/homepage/bio.jpg",
+            "link": "biology.html"
+        }, {
+            "title": "Earth Science",
+            "summary": "Rock on!",
+            "image": "../assets/homepage/earthscience.jpg",
+            "link": "earth-science.html"
+        }, {
+            "title": "Nature",
+            "summary": "Learn about animals and plants!",
+            "image": "../assets/homepage/bird.jpg",
+            "link": "nature.html"
+        }, {
+            "title": "Oceanography",
+            "summary": "Swim with the fish! (and kelp)",
+            "image": "../assets/homepage/fish.jpg",
+            "link": "oceanography.html"
+        }, {
+            "title": "Physics",
+            "summary": "The study of motion!",
+            "image": "../assets/homepage/physics.jpg",
+            "link": "physics.html"
+        }];
+        buildGrid(arr);
+
+        function buildGrid(data) {
+            var grid = document.getElementById('homeGrid');
+            for (var i = 0; i < data.length; i++) {
+                var listItem = makeGrid(data, i);
+                grid.appendChild(listItem);
+            }
+        }
+
+        function makeGrid(data, i) {
+            let listItem = document.createElement('li');
+            listItem.style = "height: 220px"; // changed height of box
+            let div = document.createElement('div');
+            div.className = "box";
+            div.style = "background-image: linear-gradient( rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.10)), url(" + data[i].image + ");";
+            let a = document.createElement('a');
+            // event listener
+            var title = data[i].title;
+            a.href = data[i].link;
+            let div2 = document.createElement('div');
+            div2.className = "info";
+            let h3 = document.createElement('h3');
+            h3.innerHTML = data[i].title;
+            h3.style = "font-size: 70px; padding: 30px 0 0 0;"; // changed font size 70
+
+            let p = document.createElement('p');
+            p.innerHTML = data[i].summary;
+            p.style = "font-size: 20px;"; // changed font size 20
+            div2.append(h3);
+            div2.append(p);
+            a.append(div2);
+            div.append(a);
+            listItem.appendChild(div);
+            return listItem;
+
+        }
+    </script>
     <!--
   <div class="topnav">
     <div class="search-container">
@@ -45,23 +124,23 @@
     </style>
 
     <div class="w3-content">
-        <div class="mySlides w3-container w3-red">
+        <!-- <div class="mySlides w3-container w3-red">
             <h1><b>Did You Know?</b></h1>
             <h1><i>Chimpanzees are gr8!</i></h1>
-        </div>
+        </div> -->
+        <br><h1 id="title" style="margin-bottom: 50px; font-size: 60px;">Here are some of our most popular projects!</h1><br><br><br>
+        <img class="mySlides" src="assets/astronomy/astroquest.jpg" style="width:100%">
+        <img class="mySlides" src="assets/astronomy/galaxyzoo.jpg" style="width:100%">
+        <img class="mySlides" src="assets/astronomy/lostatnight.jpg" style="width:100%">
+        <img class="mySlides" src="assets/biology/invaderid.jpg" style="width:100%">
+        <img class="mySlides" src="assets/earthscience/globeobserver.jpg" style="width:100%">
+        <img class="mySlides" src="assets/earthscience/smokehunting.jpg" style="width:100%">
 
-        <img class="mySlides" src="assets/Slideshow/sampleslide.png" style="width:100%">
-
-        <img class="mySlides" src="assets/astronomy/galaxy.png" style="width:100%">
-
-
-        <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+        <!-- <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
             <p><span class="w3-tag w3-yellow">New!</span>
                 <p>Free science activities!</p>
                 <p>Only $99 !!!</p>
-        </div>
-
-        <img class="mySlides" src="assets/astronomy/lostatnight.jpg" style="width:100%">
+        </div> -->
     </div>
 
     <script>
